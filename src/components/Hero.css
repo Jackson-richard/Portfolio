@@ -1,0 +1,156 @@
+.hero-section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 40px;
+}
+
+.hero-bg-glow {
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, rgba(15, 17, 21, 0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-bg-glow-2 {
+    top: auto;
+    bottom: -20%;
+    left: auto;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, rgba(15, 17, 21, 0) 70%);
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    text-align: left;
+    /* Enforce left alignment */
+}
+
+.hero-greeting {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--brand-primary);
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.hero-name {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.1;
+    margin-top: -10px;
+}
+
+.hero-role {
+    font-size: clamp(1.2rem, 3vw, 2.5rem);
+    color: var(--text-secondary);
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+.hero-cta {
+    margin-top: 20px;
+}
+
+.hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.floating-card {
+    padding: 30px;
+    min-width: 320px;
+    background: rgba(16, 18, 27, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+.code-snippet {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.code-keyword {
+    color: #c678dd;
+}
+
+.code-string {
+    color: #98c379;
+}
+
+.floating-card-small {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-brand);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: var(--shadow-glow);
+    z-index: 1;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 7s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-container {
+        flex-direction: row;
+        align-items: center;
+    }
+}
