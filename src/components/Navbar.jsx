@@ -9,6 +9,7 @@ const navLinks = [
     { name: 'Home', to: 'home' },
     { name: 'Skills', to: 'skills' },
     { name: 'Projects', to: 'projects' },
+    { name: 'Internships', to: 'internships' },
     { name: 'About', to: 'about' }
 ];
 
@@ -73,7 +74,7 @@ const Navbar = () => {
                 </button>
             </div>
 
-           
+
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div

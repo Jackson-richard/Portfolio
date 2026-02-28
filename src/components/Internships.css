@@ -1,0 +1,207 @@
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.timeline-center-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--border-subtle);
+    z-index: 1;
+}
+
+.timeline-center-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--brand-primary);
+    transition: height 1.5s ease-out;
+}
+
+.timeline-center-line.is-visible::after {
+    height: 100%;
+}
+
+.timeline-card-wrapper {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    z-index: 2;
+}
+
+.timeline-card-wrapper.left {
+    left: 0;
+    text-align: right;
+    padding-right: 50px;
+}
+
+.timeline-card-wrapper.right {
+    left: 50%;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.timeline-card-wrapper.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: var(--bg-primary);
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    z-index: 3;
+    transition: all 0.4s ease;
+}
+
+.timeline-card-wrapper.left .timeline-dot {
+    right: -8px;
+}
+
+.timeline-card-wrapper.right .timeline-dot {
+    left: -8px;
+}
+
+.timeline-card-wrapper.is-visible .timeline-dot {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 10px rgba(20, 184, 166, 0.4);
+}
+
+.timeline-card {
+    padding: 32px;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.4s ease;
+}
+
+.timeline-card-wrapper.is-visible .timeline-card {
+    border-color: rgba(20, 184, 166, 0.3);
+}
+
+.internship-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.internship-org {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.internship-duration {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+}
+
+.internship-points {
+    margin-top: 12px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.internship-points li {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    position: relative;
+}
+
+.timeline-card-wrapper.left .internship-points li {
+    padding-right: 20px;
+}
+
+.timeline-card-wrapper.right .internship-points li {
+    padding-left: 20px;
+}
+
+.timeline-card-wrapper.left .internship-points li::after {
+    content: '•';
+    position: absolute;
+    right: 0;
+    color: var(--brand-primary);
+}
+
+.timeline-card-wrapper.right .internship-points li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--brand-primary);
+}
+
+.certificate-link {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: var(--brand-primary);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.certificate-link:hover {
+    color: var(--brand-secondary);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .timeline-center-line {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-card-wrapper.left,
+    .timeline-card-wrapper.right {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 0;
+    }
+
+    .timeline-card-wrapper.left .timeline-dot,
+    .timeline-card-wrapper.right .timeline-dot {
+        left: 12px;
+        right: auto;
+    }
+
+    .timeline-card-wrapper.left .internship-points li,
+    .timeline-card-wrapper.right .internship-points li {
+        padding-left: 20px;
+        padding-right: 0;
+    }
+
+    .timeline-card-wrapper.left .internship-points li::after {
+        display: none;
+    }
+
+    .timeline-card-wrapper.left .internship-points li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: var(--brand-primary);
+    }
+}

@@ -48,6 +48,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -56,6 +57,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
+  overscroll-behavior-y: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
