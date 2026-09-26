@@ -5,13 +5,26 @@ import './Internships.css';
 
 const internshipsData = [
     {
+        title: "AI Intern",
+        organization: "Infosys Springboard",
+        duration: "June 2026 – September 2026",
+        points: [
+            "Collaborated with a team to design and develop Neo-Learners, a gamified learning application inspired by language-learning platforms.",
+            "Contributed to building an interactive learning experience focused on structured lessons, learner engagement, and progressive skill development.",
+            "Worked closely with teammates to divide development tasks, integrate individual contributions, and refine the application through iterative development.",
+            "Presented the project and demonstrated its functionality to senior officials, explaining the problem, solution, and overall project approach."
+        ],
+        certificateLink: "",
+        color: "var(--accent-lavender)"
+    },
+    {
         title: "Microsoft Azure Intern",
         organization: "Microsoft Elevate × AICTE",
         duration: "Dec 2025 – Jan 2026",
         points: [
-            "Completed structured cloud internship focused on Azure fundamentals",
-            "Worked with cloud service models and deployment concepts",
-            "Implemented basic Azure-based cloud solutions"
+            "Completed hands-on learning activities focused on Microsoft Azure fundamentals, cloud service models, and core cloud concepts.",
+            "Worked through Azure-based deployment scenarios to understand how cloud resources are configured and used in application environments.",
+            "Applied cloud concepts through practical exercises involving Azure services and basic solution implementation."
         ],
         certificateLink: "/certificate/Microsoft Azure Intern.pdf",
         color: "var(--accent-blue)"
@@ -21,10 +34,10 @@ const internshipsData = [
         organization: "Uptoskills",
         duration: "Oct 2025 – Jan 2026",
         points: [
-            "Worked on frontend development for AI-based web applications using HTML, CSS, JavaScript, and React",
-            "Built responsive user interfaces and integrated frontend components with backend logic",
-            "Followed version control practices using Git and GitHub while collaborating on project documentation",
-            "Gained exposure to AI application workflows through real world implementation"
+            "Worked on frontend development for AI-based web applications using HTML, CSS, JavaScript, and React.",
+            "Built responsive user interfaces and connected frontend components with application logic to create functional web experiences.",
+            "Used Git and GitHub for version control and collaborated on project development and documentation.",
+            "Applied frontend development concepts while working with real-world AI application use cases."
         ],
         certificateLink: "/certificate/Uptoskills.pdf",
         color: "var(--accent-red)"
@@ -34,9 +47,9 @@ const internshipsData = [
         organization: "CSRBOX × AICTE × IBM SkillsBuild",
         duration: "Dec 2025 – Jan 2026",
         points: [
-            "Explored applied AI design thinking approaches",
-            "Built small AI-based implementation projects",
-            "Studied industry AI integration use cases"
+            "Applied AI design-thinking approaches to understand real-world problems and translate them into practical solution ideas.",
+            "Built small AI-based implementation projects to explore how AI concepts can be applied to real-world scenarios.",
+            "Analyzed practical AI integration use cases to understand how intelligent systems can support different application workflows."
         ],
         certificateLink: "/certificate/CSRBOX.pdf",
         color: "var(--accent-yellow)"

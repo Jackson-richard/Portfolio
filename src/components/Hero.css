@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    padding-top: 140px;
+    padding-top: 100px;
     width: 100%;
     overflow-x: hidden;
     background-color: transparent;
@@ -23,9 +23,9 @@
 }
 
 .hero-title {
-    font-size: clamp(4rem, 8vw, 7rem);
-    line-height: 0.95;
-    margin-bottom: 0.5rem;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    line-height: 0.85;
+    margin-bottom: 0.25rem;
     letter-spacing: -2px;
     color: var(--text-primary);
     text-transform: uppercase;
@@ -59,7 +59,7 @@
     font-size: clamp(1rem, 3vw, 1.75rem);
     letter-spacing: 1px;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     text-transform: uppercase;
     background-color: var(--accent-yellow);
     padding: 0.35rem 1rem;
@@ -74,15 +74,15 @@
     font-size: clamp(1.125rem, 2vw, 1.35rem);
     color: var(--text-secondary);
     max-width: 550px;
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
 }
 
 .hero-cta-group {
     display: flex;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .cta-btn {
@@ -147,7 +147,7 @@
     position: relative;
     width: 100%;
     max-width: 460px;
-    aspect-ratio: 4/5;
+    aspect-ratio: 9/10;
     z-index: 2;
     background-color: white;
     border: 3px solid var(--border-color);
@@ -317,10 +317,10 @@
 
     /* Dedicated Title responsiveness for mobile scaling */
     .hero-title {
-        font-size: clamp(52px, 12vw, 66px);
-        /* Adheres to 360-430px metrics */
+        font-size: clamp(2.5rem, 10vw, 4rem);
         line-height: 1.05;
-        letter-spacing: -1.5px;
+        letter-spacing: -0.5px;
+        word-wrap: break-word;
     }
 
     .hero-eyebrow {
@@ -336,8 +336,8 @@
     .hero-subtitle {
         font-size: 1.05rem;
         /* 16-17px roughly */
-        line-height: 1.6;
-        margin: 0 auto 2rem auto;
+        line-height: 1.5;
+        margin: 0 auto 1.5rem auto;
         padding: 0 0.5rem;
         max-width: 100%;
     }
@@ -364,10 +364,12 @@
     }
 
     .photo-editorial-panel {
-        max-width: 300px;
+        max-width: 100%;
+        width: 100%;
         margin: 0 auto;
         border-width: 2px;
         border-radius: 8px 80px 8px 80px;
+        box-sizing: border-box;
     }
 
     .photo-bg-shape {
@@ -399,7 +401,7 @@
         flex-direction: column;
         align-items: center;
         gap: 1rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
         width: 100%;
     }
 
@@ -414,7 +416,7 @@
 
 @media (max-width: 414px) {
     .photo-editorial-panel {
-        max-width: 260px;
+        width: 100%;
     }
 }
 
@@ -434,10 +436,10 @@
 
 @media (max-width: 360px) {
     .hero-title {
-        font-size: 48px;
+        font-size: clamp(2rem, 9vw, 2.5rem);
     }
 
     .photo-editorial-panel {
-        max-width: 240px;
+        width: 100%;
     }
 }

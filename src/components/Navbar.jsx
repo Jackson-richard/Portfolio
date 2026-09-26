@@ -9,7 +9,8 @@ const navLinks = [
     { name: 'About', to: 'about' },
     { name: 'Skills', to: 'skills' },
     { name: 'Projects', to: 'projects' },
-    { name: 'Internships', to: 'internships' }
+    { name: 'Internships', to: 'internships' },
+    { name: 'Notes', to: 'devnotes' }
 ];
 
 const Navbar = () => {

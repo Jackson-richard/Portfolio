@@ -104,10 +104,18 @@
     color: var(--text-secondary);
 }
 
+.internship-points:last-child {
+    margin-bottom: 0;
+}
+
 .internship-points li {
     margin-bottom: 0.85rem;
     font-size: 1.05rem;
     line-height: 1.6;
+}
+
+.internship-points li:last-child {
+    margin-bottom: 0;
 }
 
 .certificate-link {
@@ -162,12 +170,17 @@
 
     .timeline-card-wrapper {
         padding-left: 2rem;
-        /* Reduced from 3.5rem to save width */
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .timeline-card {
         padding: 1.25rem;
         border-width: 2px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .internship-header {

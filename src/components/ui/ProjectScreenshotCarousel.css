@@ -1,0 +1,276 @@
+.carousel-container {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background-color: var(--card-color, var(--accent-yellow));
+    border: 3px solid var(--border-color);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 4px rgba(255, 255, 255, 0.4);
+    container-type: size;
+}
+
+.carousel-scroll-area {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+}
+
+.carousel-scroll-area::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.carousel-slide.mobile {
+    padding: 0;
+}
+
+.mobile-device-frame {
+    position: relative;
+    height: 80cqh;
+    aspect-ratio: 9 / 19.5;
+    margin: 0 auto;
+    background: var(--border-color);
+    border-radius: 24px;
+    border: 4px solid var(--border-color);
+    padding: 0.5rem;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+}
+
+.mobile-device-frame .carousel-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: contain;
+    background-color: var(--bg-secondary);
+}
+
+/* Left empty to replace the redundant early 768px block from earlier edits. We merged it into the master block at the bottom of the file now. */
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    box-shadow: 2px 2px 0px var(--border-color);
+    color: var(--text-primary);
+}
+
+.carousel-container:hover .carousel-arrow {
+    opacity: 1;
+}
+
+.carousel-arrow:disabled {
+    opacity: 0;
+    cursor: not-allowed;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+    background: var(--accent-yellow);
+}
+
+.carousel-arrow:active:not(:disabled) {
+    transform: translateY(-50%) translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--border-color);
+}
+
+.carousel-arrow.left {
+    left: 1rem;
+}
+
+.carousel-arrow.right {
+    right: 1rem;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.carousel-pagination {
+    display: flex;
+    gap: 0.5rem;
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.4rem 0.6rem;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dot.active {
+    background: var(--border-color);
+    transform: scale(1.2);
+}
+
+.carousel-counter {
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.25rem 0.6rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    box-shadow: 2px 2px 0px var(--border-color);
+    pointer-events: auto;
+}
+
+@media (max-width: 768px) {
+    .carousel-container {
+        container-type: normal;
+        aspect-ratio: auto;
+        /* CONSISTENT OUTER FRAME HEIGHT FOR MOBILE (SAHAY-AI) */
+        height: clamp(280px, 75vw, 360px);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Target Web/Desktop Screenshots Extracted to 10-15% Reduction */
+    .carousel-container.desktop-type {
+        height: clamp(240px, 64vw, 310px);
+    }
+
+    .carousel-scroll-area {
+        height: 100%;
+    }
+
+    .carousel-slide {
+        height: 100%;
+    }
+
+    /* DESKTOP (LANDSCAPE) IMAGES ON MOBILE */
+    .carousel-slide.desktop {
+        /* Leave heavy bottom padding so nav controls logically frame within */
+        padding: 1.25rem 1rem 3.5rem 1rem;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .carousel-slide.desktop .carousel-image {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /* MOBILE (PORTRAIT) IMAGES ON MOBILE */
+    .carousel-slide.mobile {
+        /* Mobile phone screenshots also safely fit identically */
+        padding: 1.25rem 1rem 3.5rem 1rem;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .mobile-device-frame {
+        border-radius: 20px;
+        padding: 0.35rem;
+        border-width: 3px;
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
+        /* Flex to available strict parent height */
+        height: 100%;
+        max-height: 100%;
+        aspect-ratio: 9 / 19.5;
+        width: auto;
+        max-width: 100%;
+    }
+
+    .mobile-device-frame .carousel-image {
+        border-radius: 14px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* Reactivate UI arrows for mobile inline */
+    .carousel-arrow {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        opacity: 0.85;
+        /* Perfectly center on image taking padding mismatches (1.25rem vs 3.5rem) into account */
+        margin-top: -1.125rem;
+    }
+
+    .carousel-arrow svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .carousel-arrow.left {
+        left: 0.5rem;
+    }
+
+    .carousel-arrow.right {
+        right: 0.5rem;
+    }
+
+    /* Fixed UI Bottom Anchoring */
+    .carousel-controls {
+        padding: 0 1rem;
+        bottom: 0.75rem;
+    }
+
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .carousel-counter {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+}

@@ -1,7 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import AnimatedSection from './ui/AnimatedSection';
+import CommunityOrganizationCarousel from './ui/CommunityOrganizationCarousel';
 import './About.css';
+
+const communityData = [
+    {
+        organization: "AWS Student Builder Group",
+        role: "Technical Associate",
+        description: "Contributing as a Technical Associate in the AWS Student Builder Group, supporting technical activities, peer learning, and community-driven initiatives.",
+        photos: [
+            "/community/aws-1.jpeg",
+            "/community/aws-2.jpeg"
+        ],
+        icon: "☁️"
+    },
+    {
+        organization: "Google",
+        role: "Google Student Ambassador",
+        description: "Selected as a Google Student Ambassador, representing Google within the student community and taking part in technology-focused learning, community activities, and student engagement.",
+        photos: [
+            "/community/google-2.jpeg",
+            "/community/google-1.jpeg"
+        ],
+        icon: "🌐"
+    }
+];
 
 const About = () => {
     return (
@@ -51,6 +75,15 @@ const About = () => {
                             <p className="about-feature-desc">Building practical side-projects to master theory through real-world implementation.</p>
                         </div>
                     </motion.div>
+                </div>
+
+                <div className="community-section-wrapper">
+                    <div className="community-header">
+                        <h3 className="community-title">Community & Leadership</h3>
+                    </div>
+                    <div className="community-carousel-wrapper">
+                        <CommunityOrganizationCarousel items={communityData} />
+                    </div>
                 </div>
             </div>
         </AnimatedSection>

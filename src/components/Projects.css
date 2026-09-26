@@ -12,7 +12,7 @@
 
 .project-card {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 47% 1fr;
     gap: 4rem;
     align-items: center;
     background-color: var(--bg-secondary);
@@ -31,7 +31,7 @@
 
 /* Reverse layout for even items */
 .project-card:nth-child(even) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 47% 1fr;
     direction: rtl;
 }
 
@@ -66,7 +66,7 @@
     font-weight: 700;
     font-size: 0.85rem;
     text-transform: uppercase;
-    z-index: 2;
+    z-index: 50;
     box-shadow: 2px 2px 0px var(--border-color);
 }
 
@@ -153,6 +153,13 @@
         direction: ltr;
         padding: 2rem;
         gap: 2.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .project-card:nth-child(even)>* {
+        direction: ltr;
     }
 }
 

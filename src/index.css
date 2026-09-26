@@ -31,6 +31,24 @@
 }
 
 html,
+body,
+#root {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  user-select: text;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+html,
 body {
   margin: 0;
   padding: 0;
@@ -42,6 +60,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -89,6 +108,7 @@ ol {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .btn {
@@ -168,6 +188,8 @@ ol {
 .app-container {
   overflow-x: hidden;
   width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -181,6 +203,8 @@ ol {
 
   .container {
     padding: 0 16px;
-    /* Secure compact padding as requested */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }

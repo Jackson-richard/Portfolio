@@ -1,0 +1,197 @@
+.devnotes-section {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.devnotes-header {
+    margin-bottom: 4rem;
+}
+
+.devnotes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 3px solid var(--border-color);
+}
+
+.devnote-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    padding: 3.5rem 0;
+    border-bottom: 3px solid var(--border-color);
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.devnote-row:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.devnote-number {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    opacity: 0.3;
+    line-height: 1.1;
+    margin-top: 0.25rem;
+}
+
+.devnote-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.devnote-title-link {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+}
+
+.devnote-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.1;
+    margin: 0;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.devnote-title-link:hover .devnote-title {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+    color: var(--accent-coral);
+}
+
+.devnote-tags {
+    margin-bottom: 2rem;
+    color: var(--border-color);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.devnote-tag {
+    display: inline;
+}
+
+.devnote-description {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    max-width: 850px;
+}
+
+/* Allow users to select text specifically over descriptions if they wish */
+.devnote-description {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+.devnote-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.devnote-meta {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+}
+
+.devnote-action {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    background-color: var(--accent-yellow);
+    padding: 0.75rem 1.75rem;
+    border: 2px solid var(--border-color);
+    box-shadow: 3px 3px 0px var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.devnote-action:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--border-color);
+    background-color: var(--accent-yellow-hover);
+}
+
+@media (max-width: 992px) {
+    .devnote-row {
+        grid-template-columns: 60px 1fr;
+        gap: 1.5rem;
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .devnotes-header {
+        margin-bottom: 2rem;
+    }
+
+    .devnote-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 2.5rem 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .devnote-number {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        opacity: 0.5;
+    }
+
+    .devnote-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+        word-wrap: break-word;
+    }
+
+    .devnote-tags {
+        font-size: 0.8rem;
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .devnote-description {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        width: 100%;
+    }
+
+    .devnote-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .devnote-action {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import ProjectScreenshotCarousel from './ProjectScreenshotCarousel';
 
 const ProjectCard = ({ project, index }) => {
     return (
@@ -12,10 +13,14 @@ const ProjectCard = ({ project, index }) => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             style={{ '--card-color': project.color }}
         >
-            <div className="project-image-container">
-                <div className="project-badge">Featured</div>
-                <span className="project-image-icon">{project.icon}</span>
-            </div>
+            {project.screenshots && project.screenshots.length > 0 ? (
+                <ProjectScreenshotCarousel screenshots={project.screenshots} color={project.color} type={project.previewType || 'desktop'} />
+            ) : (
+                <div className="project-image-container">
+                    <div className="project-badge">Featured</div>
+                    <span className="project-image-icon">{project.icon}</span>
+                </div>
+            )}
 
             <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>

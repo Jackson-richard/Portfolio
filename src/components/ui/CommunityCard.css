@@ -1,0 +1,193 @@
+.community-card {
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-small);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.community-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-base);
+}
+
+.community-carousel-container {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: var(--bg-primary);
+    position: relative;
+    border-bottom: 3px solid var(--border-color);
+}
+
+.community-scroll-area {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.community-scroll-area::-webkit-scrollbar {
+    display: none;
+}
+
+.community-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: center;
+    background-color: var(--bg-primary);
+}
+
+.community-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.community-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--accent-yellow);
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.25rem 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    z-index: 10;
+    box-shadow: 2px 2px 0px var(--border-color);
+}
+
+.community-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
+    box-shadow: 2px 2px 0px var(--border-color);
+    color: var(--text-primary);
+}
+
+.community-carousel-container:hover .community-arrow {
+    opacity: 1;
+}
+
+.community-arrow.left {
+    left: 0.75rem;
+}
+
+.community-arrow.right {
+    right: 0.75rem;
+}
+
+.community-arrow:disabled {
+    opacity: 0;
+    cursor: not-allowed;
+}
+
+.community-arrow:hover:not(:disabled) {
+    background: var(--accent-yellow);
+}
+
+.community-arrow:active:not(:disabled) {
+    transform: translateY(-50%) translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--border-color);
+}
+
+.community-pagination {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.4rem;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 0.3rem 0.6rem;
+    border-radius: 12px;
+    border: 2px solid var(--border-color);
+}
+
+.community-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.community-dot.active {
+    background: var(--border-color);
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .community-arrow {
+        display: none;
+    }
+}
+
+.community-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.community-role-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.community-icon {
+    font-size: 1.5rem;
+}
+
+.community-role {
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.community-org {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.community-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}

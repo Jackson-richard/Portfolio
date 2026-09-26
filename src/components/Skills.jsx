@@ -23,6 +23,12 @@ const skillsData = [
         color: "var(--accent-red)"
     },
     {
+        category: "DevOps & Infrastructure",
+        skills: ["Linux", "Docker", "Git & GitHub", "AWS", "CI/CD"],
+        icon: "🚀",
+        color: "var(--accent-cyan)"
+    },
+    {
         category: "Concepts & Other",
         skills: ["Authentication", "Secure System Design", "System Thinking", "Machine Learning (Basics)"],
         icon: "🧠",
