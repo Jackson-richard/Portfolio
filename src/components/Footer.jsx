@@ -20,7 +20,7 @@ const Footer = () => {
                     <p className="footer-subtitle">
                         Currently open for new opportunities. Whether you have a question or just want to say hi, my inbox is open!
                     </p>
-                    <a href="mailto:jacksonrichard.in@gmail.com" className="footer-cta">
+                    <a href="mailto:jacksonrichard.dev@gmail.com" className="footer-cta">
                         Say Hello <FaEnvelope />
                     </a>
                 </motion.div>
