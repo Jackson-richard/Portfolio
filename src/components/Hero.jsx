@@ -57,7 +57,7 @@ const Hero = () => {
                             <div className="photo-bg-shape"></div>
 
                             <img
-                                src="/avatar.jpg"
+                                src="https://github.com/Jackson-richard.png"
                                 alt="Jackson Richard J"
                                 className="hero-photo"
                             />
