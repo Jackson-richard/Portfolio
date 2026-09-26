@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import AnimatedSection from './ui/AnimatedSection';
 import './Internships.css';
 
 const internshipsData = [
@@ -11,7 +13,8 @@ const internshipsData = [
             "Worked with cloud service models and deployment concepts",
             "Implemented basic Azure-based cloud solutions"
         ],
-        certificateLink: "/certificate/Microsoft Azure Intern.pdf"
+        certificateLink: "/certificate/Microsoft Azure Intern.pdf",
+        color: "var(--accent-blue)"
     },
     {
         title: "Artificial Intelligence Intern",
@@ -23,7 +26,8 @@ const internshipsData = [
             "Followed version control practices using Git and GitHub while collaborating on project documentation",
             "Gained exposure to AI application workflows through real world implementation"
         ],
-        certificateLink: "/certificate/Uptoskills.pdf"
+        certificateLink: "/certificate/Uptoskills.pdf",
+        color: "var(--accent-red)"
     },
     {
         title: "Applied AI Intern",
@@ -34,54 +38,39 @@ const internshipsData = [
             "Built small AI-based implementation projects",
             "Studied industry AI integration use cases"
         ],
-        certificateLink: "/certificate/CSRBOX.pdf"
+        certificateLink: "/certificate/CSRBOX.pdf",
+        color: "var(--accent-yellow)"
     }
 ];
 
 const Internships = () => {
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.2
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, observerOptions);
-
-        const elements = document.querySelectorAll('.timeline-card-wrapper, .timeline-center-line');
-        elements.forEach(el => observer.observe(el));
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <section id="internships" className="section-padding" ref={sectionRef}>
+        <AnimatedSection id="internships" className="internships-section section-padding">
             <div className="container">
                 <div className="section-header">
-                    <h2 className="section-title gradient-text">Internships</h2>
-                    <p className="section-subtitle">Professional experience and applied learning in cloud computing and AI.</p>
+                    <h2 className="section-title">Experience</h2>
+                    <p className="section-subtitle">Professional experience and applied learning.</p>
                 </div>
 
                 <div className="timeline-container">
-                    <div className="timeline-center-line"></div>
-
                     {internshipsData.map((internship, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className={`timeline-card-wrapper ${index % 2 === 0 ? 'left' : 'right'}`}
+                            className="timeline-card-wrapper"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-10%" }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <div className="timeline-card glass-panel">
-                                <h3 className="internship-title">{internship.title}</h3>
-                                <h4 className="internship-org gradient-text">{internship.organization}</h4>
-                                <span className="internship-duration">{internship.duration}</span>
+                            <div className="timeline-dot" style={{ backgroundColor: internship.color }}></div>
+                            <div className="timeline-card">
+                                <div className="internship-header">
+                                    <div>
+                                        <h3 className="internship-title">{internship.title}</h3>
+                                        <div className="internship-org">{internship.organization}</div>
+                                    </div>
+                                    <span className="internship-duration">{internship.duration}</span>
+                                </div>
 
                                 <ul className="internship-points">
                                     {internship.points.map((point, idx) => (
@@ -100,12 +89,11 @@ const Internships = () => {
                                     </a>
                                 )}
                             </div>
-                            <div className="timeline-dot"></div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </AnimatedSection>
     );
 };
 

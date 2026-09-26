@@ -1,37 +1,51 @@
 import React from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="footer">
-            <div className="container footer-container">
+        <section id="contact" className="footer-section">
+            <div className="footer-decoration">{"}"}</div>
+            <div className="container">
 
-                <div className="footer-content">
+                <motion.div
+                    className="footer-content"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <h2 className="footer-title">Let's build something.</h2>
+                    <p className="footer-subtitle">
+                        Currently open for new opportunities. Whether you have a question or just want to say hi, my inbox is open!
+                    </p>
+                    <a href="mailto:jacksonrichard.in@gmail.com" className="footer-cta">
+                        Say Hello <FaEnvelope />
+                    </a>
+                </motion.div>
+
+                <div className="footer-bottom">
                     <div className="footer-brand">
-                        <h2 className="footer-logo gradient-text">JR</h2>
-                        <p className="footer-tagline">Building secure & scalable digital experiences.</p>
+                        Jackson Richard J
                     </div>
 
                     <div className="footer-socials">
                         <a href="https://github.com/Jackson-richard" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub Profile">
-                            <FaGithub size={28} />
+                            <FaGithub size={24} />
                         </a>
                         <a href="https://www.linkedin.com/in/jacksonrichard-j/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn Profile">
-                            <FaLinkedin size={28} />
+                            <FaLinkedin size={24} />
                         </a>
+                    </div>
+
+                    <div className="footer-copyright">
+                        &copy; {new Date().getFullYear()} JR. Built with React.
                     </div>
                 </div>
 
-                <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} JR. All rights reserved.</p>
-                    <p className="footer-built-with">
-                        Built with React & Framer Motion
-                    </p>
-                </div>
-
             </div>
-        </footer>
+        </section>
     );
 };
 

@@ -23,15 +23,15 @@
 
 @keyframes pulse-glow {
     0% {
-        box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        box-shadow: 0 0 20px rgba(255, 218, 61, 0.2);
     }
 
     50% {
-        box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+        box-shadow: 0 0 40px rgba(255, 98, 104, 0.3);
     }
 
     100% {
-        box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        box-shadow: 0 0 20px rgba(255, 218, 61, 0.2);
     }
 }
 
@@ -39,19 +39,22 @@
     animation: pulse-glow 4s infinite;
 }
 
+/* Light Theme Scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
     background: var(--bg-primary);
+    border-left: 2px solid var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    background: var(--border-color);
+    border-radius: 0;
+    border: 2px solid var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--accent-yellow);
 }

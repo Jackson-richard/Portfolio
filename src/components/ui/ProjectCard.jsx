@@ -1,28 +1,26 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const ProjectCard = ({ project, index }) => {
     return (
         <motion.div
             className="project-card"
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ '--card-color': project.color }}
         >
             <div className="project-image-container">
-                <div className="project-image-placeholder glass-panel">
-                    <div className="project-badge">Featured</div>
-                    <span className="project-image-icon">{project.icon}</span>
-                </div>
+                <div className="project-badge">Featured</div>
+                <span className="project-image-icon">{project.icon}</span>
             </div>
 
             <div className="project-content">
-                <h3 className="project-title gradient-text">{project.title}</h3>
-                <div className="project-description glass-panel">
-                    <p>{project.description}</p>
-                </div>
+                <h3 className="project-title">{project.title}</h3>
+
+                <p className="project-description">{project.description}</p>
 
                 <ul className="project-tech-list">
                     {project.tech.map((tech, idx) => (

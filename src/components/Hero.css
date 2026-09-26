@@ -1,156 +1,443 @@
 .hero-section {
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
-    overflow: hidden;
-    padding-top: 40px;
+    padding-top: 140px;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: transparent;
 }
 
-.hero-bg-glow {
-    position: absolute;
-    top: 10%;
-    left: -10%;
-    width: 50vw;
-    height: 50vw;
-    background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, rgba(15, 17, 21, 0) 70%);
-    border-radius: 50%;
-    z-index: -1;
-    pointer-events: none;
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
 }
 
-.hero-bg-glow-2 {
-    top: auto;
-    bottom: -20%;
-    left: auto;
-    right: -10%;
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, rgba(15, 17, 21, 0) 70%);
-}
-
-.hero-container {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    z-index: 1;
-}
-
+/* LEFT SIDE */
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    flex: 1;
-    text-align: left;
-    /* Enforce left alignment */
 }
 
-.hero-greeting {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: var(--brand-primary);
-    font-family: var(--font-heading);
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
-.hero-name {
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    line-height: 1.1;
-    margin-top: -10px;
-}
-
-.hero-role {
-    font-size: clamp(1.2rem, 3vw, 2.5rem);
-    color: var(--text-secondary);
-    line-height: 1.2;
-}
-
-.hero-description {
-    font-size: clamp(1rem, 2vw, 1.15rem);
-    color: var(--text-muted);
-    max-width: 600px;
-    margin-top: 10px;
-}
-
-.hero-cta {
-    margin-top: 20px;
-}
-
-.hero-visual {
-    flex: 1;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.floating-card {
-    padding: 30px;
-    min-width: 320px;
-    background: rgba(16, 18, 27, 0.8);
-    position: relative;
-    z-index: 2;
-}
-
-.code-snippet {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.95rem;
+.hero-title {
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: 0.95;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
     color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.title-accent-coral {
+    color: var(--accent-coral);
+}
+
+.title-accent-lavender {
+    position: relative;
+    display: inline-block;
+}
+
+.title-accent-lavender::after {
+    content: '';
+    position: absolute;
+    bottom: 12%;
+    left: -2%;
+    width: 104%;
+    height: 35%;
+    background-color: var(--accent-lavender);
+    z-index: -1;
+    transform: rotate(2deg);
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(1rem, 3vw, 1.75rem);
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    background-color: var(--accent-yellow);
+    padding: 0.35rem 1rem;
+    border: 3px solid var(--border-color);
+    border-radius: 5px;
+    transform: rotate(-1deg);
+    box-shadow: 2px 2px 0px var(--border-color);
+    align-self: flex-start;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.125rem, 2vw, 1.35rem);
+    color: var(--text-secondary);
+    max-width: 550px;
+    margin-bottom: 2.5rem;
     line-height: 1.6;
 }
 
-.code-keyword {
-    color: #c678dd;
+.hero-cta-group {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
 }
 
-.code-string {
-    color: #98c379;
+.cta-btn {
+    flex: none;
 }
 
-.floating-card-small {
-    position: absolute;
-    bottom: -20px;
-    right: 20px;
-    width: 80px;
-    height: 80px;
-    background: var(--gradient-brand);
-    border-radius: 20px;
+/* Metadata Display */
+.hero-secondary-info {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.hero-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.hero-info-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.25rem;
+    border: 2px solid var(--border-color);
+    background-color: white;
+}
+
+.icon-loc {
+    background-color: var(--accent-cyan);
+    box-shadow: 2px 2px 0px var(--border-color);
+}
+
+.icon-edu {
+    background-color: var(--accent-lime);
+    box-shadow: 2px 2px 0px var(--border-color);
+}
+
+.icon-job {
+    background-color: var(--accent-lavender);
+    box-shadow: 2px 2px 0px var(--border-color);
+}
+
+/* RIGHT SIDE PHOTO */
+.hero-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.photo-editorial-panel {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    aspect-ratio: 4/5;
+    z-index: 2;
+    background-color: white;
+    border: 3px solid var(--border-color);
+    border-radius: 12px 120px 12px 120px;
+    padding: 1rem;
+    box-shadow: 8px 8px 0px rgba(17, 17, 17, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-editorial-panel:hover {
+    transform: translateY(-5px);
+}
+
+.hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 110px 8px 110px;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-primary);
+    filter: grayscale(10%) contrast(1.1);
+}
+
+.photo-bg-shape {
+    position: absolute;
+    top: 5%;
+    right: -5%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-coral);
+    border-radius: 12px 120px 12px 120px;
+    border: 3px solid var(--border-color);
+    z-index: -1;
+    transform: rotate(3deg);
+}
+
+/* Small floating elements */
+.float-status {
+    position: absolute;
+    bottom: 2rem;
+    left: -2rem;
+    background-color: var(--accent-yellow);
+    padding: 0.5rem 1.2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 50px;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
     font-weight: 800;
-    color: white;
-    box-shadow: var(--shadow-glow);
-    z-index: 1;
+    font-size: 0.85rem;
+    box-shadow: 2px 2px 0px var(--border-color);
+    transform: rotate(-4deg);
+    z-index: 3;
 }
 
-.animate-float {
-    animation: float 6s ease-in-out infinite;
+.float-code {
+    position: absolute;
+    top: 2rem;
+    right: -1.5rem;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 3px 3px 0px var(--border-color);
+    z-index: 3;
 }
 
-.animate-float-delayed {
-    animation: float 7s ease-in-out infinite reverse;
+/* Decoration */
+.hero-decoration {
+    position: absolute;
+    font-size: 4rem;
+    color: var(--accent-coral);
+    z-index: 0;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0px);
+.dec-1 {
+    top: 10%;
+    right: 40%;
+}
+
+.dec-2 {
+    bottom: 10%;
+    left: 0%;
+    color: var(--accent-lavender);
+}
+
+
+/* Scroll indicator */
+.scroll-indicator-container {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+/* Tablet & Mobile Overrides */
+.mobile-metadata {
+    display: none;
+}
+
+@media (min-width: 769px) {
+
+    /* Only desktop shows native secondary info below buttons */
+    .hero-content>.hero-secondary-info {
+        display: none;
+        /* Actually desktop Hero.jsx no longer renders it under buttons directly, 
+           we removed it from there. It's now right below visual as .mobile-metadata. 
+           Let's fix it for desktop! Add it back strictly if missing... */
     }
 
-    50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0px);
+    .mobile-metadata {
+        display: flex;
+        margin-top: 3rem;
+        justify-content: center;
     }
 }
 
-@media (min-width: 992px) {
-    .hero-container {
-        flex-direction: row;
+@media (max-width: 1024px) {
+    .hero-grid {
+        gap: 2rem;
+    }
+
+    .photo-editorial-panel {
+        max-width: 380px;
+    }
+
+    .float-status {
+        left: -1rem;
+    }
+
+    .hero-title {
+        font-size: clamp(3.5rem, 6vw, 4.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-top: 100px;
+        min-height: 100svh;
+        height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+
+    .hero-content {
+        text-align: center;
         align-items: center;
+        order: 1;
+    }
+
+    /* Dedicated Title responsiveness for mobile scaling */
+    .hero-title {
+        font-size: clamp(52px, 12vw, 66px);
+        /* Adheres to 360-430px metrics */
+        line-height: 1.05;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-eyebrow {
+        margin: 0 auto 1.5rem auto;
+        padding: 0.25rem 0.75rem;
+        /* Tighter box */
+        font-size: 0.9rem;
+        border-width: 2px;
+        box-shadow: 2px 2px 0px var(--border-color);
+        display: inline-block;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+        /* 16-17px roughly */
+        line-height: 1.6;
+        margin: 0 auto 2rem auto;
+        padding: 0 0.5rem;
+        max-width: 100%;
+    }
+
+    /* Stack components elegantly */
+    .hero-cta-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .cta-btn {
+        width: min(100%, 280px);
+        min-height: 48px;
+        padding: 1rem;
+    }
+
+    .hero-visual {
+        order: 2;
+        padding-top: 1rem;
+    }
+
+    .photo-editorial-panel {
+        max-width: 300px;
+        margin: 0 auto;
+        border-width: 2px;
+        border-radius: 8px 80px 8px 80px;
+    }
+
+    .photo-bg-shape {
+        border-radius: 8px 80px 8px 80px;
+        border-width: 2px;
+    }
+
+    .hero-photo {
+        border-radius: 6px 70px 6px 70px;
+    }
+
+    .float-status {
+        left: 0;
+        bottom: 1rem;
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .float-code {
+        right: 0;
+        top: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+
+    .mobile-metadata {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 3rem;
+        width: 100%;
+    }
+
+    .scroll-indicator-container {
+        display: none;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+}
+
+@media (max-width: 414px) {
+    .photo-editorial-panel {
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 50px;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.85rem;
+    }
+
+    .cta-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .photo-editorial-panel {
+        max-width: 240px;
     }
 }

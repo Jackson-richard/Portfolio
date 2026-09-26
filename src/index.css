@@ -1,68 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --bg-primary: #FFFDF5;
+  --bg-secondary: #ffffff;
+  --text-primary: #111111;
+  --text-secondary: #333333;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --accent-yellow: #FFDA3D;
+  --accent-yellow-hover: #F2C92E;
+  --accent-coral: #FF6268;
+  --accent-lavender: #B9A7FF;
+  --accent-cyan: #49D9D1;
+  --accent-lime: #A3FF6B;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --border-color: #111111;
+  --border-radius: 12px;
+
+  --font-body: 'Outfit', -apple-system, sans-serif;
+  --font-heading: 'Space Grotesk', -apple-system, sans-serif;
+
+  --shadow-base: 6px 6px 0px var(--border-color);
+  --shadow-hover: 2px 2px 0px var(--border-color);
+  --shadow-small: 3px 3px 0px var(--border-color);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
 }
 
-h1 {
-  font-size: 3.2em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  margin: 0 0 1rem 0;
+  font-weight: 700;
   line-height: 1.1;
+  color: var(--text-primary);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+p {
+  margin: 0 0 1rem 0;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.9rem 1.8rem;
+  border: 2px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--accent-yellow);
+  box-shadow: var(--shadow-small);
+}
+
+.btn-primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-hover);
+  background: var(--accent-yellow-hover);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-small);
+}
+
+.btn-secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-hover);
+  background: #f0f0f0;
+}
+
+.section-padding {
+  padding: 7rem 0;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  left: -2%;
+  width: 104%;
+  height: 35%;
+  background-color: var(--accent-yellow);
+  z-index: -1;
+  opacity: 0.8;
+  transform: skewX(-10deg);
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 650px;
+  margin-bottom: 4rem;
+}
+
+#root,
+.app-container {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
   }
-  a:hover {
-    color: #747bff;
+
+  .section-padding {
+    padding: 4rem 0;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .container {
+    padding: 0 16px;
+    /* Secure compact padding as requested */
   }
 }
