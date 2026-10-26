@@ -22,7 +22,7 @@ const Hero = () => {
                     >
                         <div className="hero-mobile-layout-order">
                             <div className="hero-eyebrow">
-                                FULL-STACK DEVELOPER
+                                AI ENGINEER
                             </div>
 
                             <h1 className="hero-title">
@@ -32,7 +32,7 @@ const Hero = () => {
                             </h1>
 
                             <p className="hero-subtitle">
-                                I build scalable, user-friendly web applications, actively exploring Cloud architecture, DevOps methodologies, and backend systems.
+                                I design and build intelligent systems, production-ready AI applications, and scalable backend architectures powered by modern machine learning and LLMs.
                             </p>
 
                             <div className="hero-cta-group">
@@ -67,7 +67,7 @@ const Hero = () => {
                             </div>
 
                             <div className="float-status">
-                                BUILDING SYSTEMS
+                                BUILDING AI SYSTEMS
                             </div>
                         </div>
 

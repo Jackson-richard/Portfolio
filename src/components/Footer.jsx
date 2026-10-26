@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,18 +11,15 @@ const Footer = () => {
 
                 <motion.div
                     className="footer-content"
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.6 }}
                 >
                     <h2 className="footer-title">Let's build something.</h2>
                     <p className="footer-subtitle">
-                        Currently open for new opportunities. Whether you have a question or just want to say hi, my inbox is open!
+                        Currently open for AI engineering opportunities, collaborations, and discussions on intelligent systems.
                     </p>
-                    <a href="mailto:jacksonrichard.dev@gmail.com" className="footer-cta">
-                        Say Hello <FaEnvelope />
-                    </a>
                 </motion.div>
 
                 <div className="footer-bottom">

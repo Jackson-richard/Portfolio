@@ -7,7 +7,7 @@ const projectsData = [
     {
         title: "SAHAY-AI — AI-Powered Distress Monitoring System",
         description: "An AI-powered, consent-based wellbeing monitoring system designed to support victims through continuous check-ins, bilingual AI assistance, distress analysis, and an official monitoring dashboard.",
-        tech: ["Kotlin", "Jetpack Compose", "Supabase", "PostgreSQL", "Groq API", "AI/ML", "Tamil + English"],
+        tech: ["Kotlin", "Jetpack Compose", "Supabase", "PostgreSQL", "Groq API", "AI/ML", "Multi-language"],
         github: "https://github.com/Jackson-richard/SAHAY-AI",
         icon: "🧠🫂📱",
         screenshots: [
@@ -56,7 +56,7 @@ const Projects = () => {
             <div className="container">
                 <div className="section-header">
                     <h2 className="section-title">Featured Work</h2>
-                    <p className="section-subtitle">Real-world applications showcasing my full-stack capabilities.</p>
+                    <p className="section-subtitle">Real-world applications showcasing my AI engineering and intelligent systems capabilities.</p>
                 </div>
 
                 <div className="projects-container">

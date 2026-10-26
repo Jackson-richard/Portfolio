@@ -1,6 +1,6 @@
 🚀 Personal Portfolio — JR
 
-This repository contains my personal developer portfolio built using React.js.
+This repository contains my personal AI Engineer portfolio built using React.js.
 The portfolio showcases my projects, technical skills, and learning journey, with a focus on clean design, interactivity, and maintainable code.
 
 The goal of this project is to present my work in a clear, professional way while also experimenting with modern frontend practices and smooth user experiences.

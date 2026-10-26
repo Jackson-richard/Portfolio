@@ -5,33 +5,33 @@ import './Skills.css';
 
 const skillsData = [
     {
-        category: "Frontend",
-        skills: ["React.js", "HTML5", "CSS3", "JavaScript (ES6+)"],
-        icon: "🎨",
+        category: "AI & Machine Learning",
+        skills: ["LLMs & Prompt Engineering", "NLP & Transformers", "Groq API & OpenAI", "Model Inference", "Supervised Learning", "Distress & Sentiment Analysis"],
+        icon: "🧠",
+        color: "var(--accent-coral)"
+    },
+    {
+        category: "Programming & Data",
+        skills: ["Python", "JavaScript (ES6+)", "Java", "SQL & PostgreSQL", "Data Preprocessing"],
+        icon: "💻",
         color: "var(--accent-yellow)"
     },
     {
-        category: "Backend",
-        skills: ["Node.js", "Express.js", "REST APIs"],
+        category: "Backend & Systems",
+        skills: ["Node.js", "Express.js", "FastAPI / Flask", "REST APIs", "Supabase & Firebase"],
         icon: "⚙️",
         color: "var(--accent-blue)"
     },
     {
-        category: "Languages",
-        skills: ["Python", "Java", "JavaScript"],
-        icon: "💻",
-        color: "var(--accent-red)"
-    },
-    {
-        category: "DevOps & Infrastructure",
-        skills: ["Linux", "Docker", "Git & GitHub", "AWS", "CI/CD"],
+        category: "Cloud & DevOps",
+        skills: ["AWS", "Microsoft Azure", "Docker", "Git & GitHub", "Linux", "CI/CD"],
         icon: "🚀",
         color: "var(--accent-cyan)"
     },
     {
-        category: "Concepts & Other",
-        skills: ["Authentication", "Secure System Design", "System Thinking", "Machine Learning (Basics)"],
-        icon: "🧠",
+        category: "Web & Architecture",
+        skills: ["React.js", "System Architecture", "Secure Authentication & JWT", "State Management"],
+        icon: "🎨",
         color: "#10b981"
     }
 ];
@@ -60,7 +60,7 @@ const Skills = () => {
             <div className="container">
                 <div className="section-header">
                     <h2 className="section-title">Technical Arsenal</h2>
-                    <p className="section-subtitle">Technologies and concepts I utilize to build robust applications.</p>
+                    <p className="section-subtitle">Technologies, frameworks, and AI tools I utilize to engineer intelligent systems.</p>
                 </div>
 
                 <motion.div

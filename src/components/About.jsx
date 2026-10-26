@@ -47,14 +47,14 @@ const About = () => {
                             <div className="about-marker">Who am I?</div>
                             <div className="about-decoration">"</div>
                             <p className="about-text">
-                                I am a developer focused on building real, practical systems while actively learning full-stack development.
-                                I enjoy working across both frontend and backend, with growing interests in backend architecture, cloud infrastructure,
-                                and applying machine learning to solve meaningful problems.
+                                I am an AI Engineer focused on building intelligent systems, machine learning solutions, and robust software architectures.
+                                I enjoy bridging the gap between cutting-edge AI models and production applications, with specialized interests in LLMs, Natural Language Processing,
+                                cloud infrastructure, and data pipelines.
                             </p>
                             <p className="about-text">
-                                I learn by doing. Through hands-on projects, I explore areas such as authentication workflows, cloud computing, database design,
-                                and integrating NLP models into applications. My focus is on writing clean code, understanding secure design principles,
-                                and building systems that are maintainable and easy to reason about.
+                                I learn by doing. Through hands-on engineering, I build projects spanning AI-powered monitoring systems, NLP-driven classification,
+                                cloud computing, and integrating intelligent APIs into full-scale applications. My focus is on writing clean, efficient code,
+                                understanding secure system design, and building maintainable AI solutions that solve real-world problems.
                             </p>
                         </div>
                     </motion.div>
@@ -68,11 +68,11 @@ const About = () => {
                     >
                         <div className="about-feature-box">
                             <h3 className="about-feature-title">Driven by Curiosity</h3>
-                            <p className="about-feature-desc">Constantly exploring new technologies and architectural patterns to build better software.</p>
+                            <p className="about-feature-desc">Constantly exploring state-of-the-art AI architectures, foundation models, and scalable systems.</p>
                         </div>
                         <div className="about-feature-box">
                             <h3 className="about-feature-title">Hands-on Learner</h3>
-                            <p className="about-feature-desc">Building practical side-projects to master theory through real-world implementation.</p>
+                            <p className="about-feature-desc">Building end-to-end AI applications to master theory through real-world deployment.</p>
                         </div>
                     </motion.div>
                 </div>

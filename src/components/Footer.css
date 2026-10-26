@@ -1,7 +1,7 @@
 .footer-section {
     background-color: var(--accent-yellow);
     color: var(--text-primary);
-    padding-top: 6rem;
+    padding-top: 3.5rem;
     padding-bottom: 2rem;
     position: relative;
     overflow: hidden;
@@ -13,23 +13,23 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 5rem;
+    margin-bottom: 2.5rem;
     position: relative;
     z-index: 2;
 }
 
 .footer-title {
-    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.85rem;
     letter-spacing: -1px;
 }
 
 .footer-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
-    max-width: 550px;
-    margin-bottom: 3.5rem;
+    max-width: 540px;
+    margin-bottom: 0;
 }
 
 .footer-cta {
