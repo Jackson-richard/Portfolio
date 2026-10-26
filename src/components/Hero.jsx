@@ -92,7 +92,6 @@ const Hero = () => {
                 <div className="mouse">
                     <div className="wheel"></div>
                 </div>
-                <span>SCROLL</span>
             </div>
         </section>
     );
